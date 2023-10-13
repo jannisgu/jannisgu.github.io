@@ -1,0 +1,30 @@
+:root {
+    --primary-color: rgb(128, 189, 128);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: block;
+    font-family: Arial, sans-serif;
+    background-color: var(--primary-color);
+    color: black;
+}
+
+.main-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    padding-inline: 20vw;
+    margin-top: 3rem;
+}
+.img-info img {
+    max-height: 22rem;
+}
