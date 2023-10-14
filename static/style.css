@@ -1,5 +1,6 @@
 :root {
-    --primary-color: rgb(128, 189, 128);
+    --primary-color: rgb(110, 236, 110);
+    --secondary-color: rgb(90, 221, 90);
 }
 
 * {
@@ -10,21 +11,167 @@
 
 body {
     display: block;
-    font-family: Arial, sans-serif;
-    background-color: var(--primary-color);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: white;
     color: black;
+    position: relative;
 }
 
-.main-info {
+.navbar {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    width: 100%;
-    height: 100%;
-
-    padding-inline: 20vw;
-    margin-top: 3rem;
+    padding-inline: 15vw;
+    border-bottom: 1px solid rgba(0, 144, 0, 0.354);
+    background-color: var(--primary-color);
+    height: 52px;
+    position: relative;
+    z-index: 50;
 }
-.img-info img {
-    max-height: 22rem;
+
+.navbar .left-side,.navbar .right-side {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+.navbar .left-side {
+    font-weight: 700;
+}
+.navbar .right-side {
+    font-weight: 500;
+}
+.navbar .left-side li,.navbar .right-side li {
+    margin: 0 15px;
+}
+.navbar .left-side li a,.navbar .right-side li a {
+    color: inherit;
+    text-decoration: none;
+}
+.navbar .left-side li a:hover,.navbar .right-side li a:hover {
+    text-decoration: underline;
+}
+.navbar .left-side li a:active,.navbar .right-side li a:active {
+    color: inherit;
+}
+
+@media screen and (max-width: 768px) {
+    .left-side li, .right-side li {
+      margin: 0 10px; /* Decrease the gap for small screens */
+    }
+}
+  
+/* Larger screens */
+@media screen and (min-width: 769px) {
+.left-side li, .right-side li {
+    margin: 0 20px; /* Increase the gap for larger screens */
+}
+}
+
+/* Limit the gap for very wide screens */
+@media screen and (min-width: 1200px) {
+    .left-side li, .right-side li {
+    margin: 0 30px; /* Limit the gap for very wide screens */
+    }
+}
+
+section {
+    padding-inline: 15vw;
+    position: relative;
+}
+section.primary {
+    background-color: var(--primary-color);
+    overflow: hidden;
+}
+section.white {
+    background-color: white;
+}
+
+.content {
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    flex-direction: column;
+    max-width: 72rem;
+}
+.content.row {
+    flex-direction: row;
+}
+.text-header {
+    z-index: 1;
+}
+.text-header h1 {
+    font-size: 2.65rem;
+    margin-bottom: 8px;
+}
+.text-header p {
+    font-size: 1.3rem;
+    font-weight: 300;
+    margin-bottom: 15px;
+}
+.btn {
+    border: none;
+    padding: 10px 25px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background-color: white;
+}
+.btn.black {
+    background-color: black;
+    color: white;
+}
+.btn.fill {
+    border: 1.5px solid black;
+    background: transparent;
+    transition: all 0.3s ease;
+    color: black;
+    position: relative;
+}
+.btn.fill::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 100%;
+    background: black;
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+.btn.fill:hover {
+    color: white;
+    transition: all 0.3s ease;  
+}
+.btn.fill:hover::before {
+    top: 0;
+}
+.img-header {
+    position: relative;
+    display: flex;
+    margin-top: 15px;
+}
+.img-header img {
+    max-width: 380px;
+    position: relative;
+    transition: scale 0.3s ease;
+}
+.img-header img:hover {
+    transition: scale 0.3s ease;
+    scale: 1.05;
+}
+.img-header::before {
+    content: "";
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    background-color: var(--secondary-color);
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+}
+
+.header {
+    margin-top: 25px;
+    font-size: 2.5rem;
 }
