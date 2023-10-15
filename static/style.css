@@ -153,10 +153,11 @@ section.white {
 .img-header img {
     max-width: 380px;
     position: relative;
-    transition: scale 0.3s ease;
+    transition: all 0.3s ease;
 }
-.img-header img:hover {
-    transition: scale 0.3s ease;
+.img-header:hover img {
+    transition: all 0.3s ease;
+    transform: translate(-10%,0%);
     scale: 1.05;
 }
 .img-header::before {
@@ -169,6 +170,12 @@ section.white {
     width: 600px;
     height: 600px;
     border-radius: 50%;
+    transition: all 0.3s ease;
+}
+.img-header:hover::before {
+    transition: all 0.3s ease;
+    transform: translate(-55%,-50%);
+    scale: 1.05;
 }
 
 .header {
