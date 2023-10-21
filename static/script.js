@@ -10,12 +10,41 @@ document.addEventListener("DOMContentLoaded", () => {
     animate_phone_img();
   }
 
-  if (true) {
+  if (touch_bool) {
     window.addEventListener("scroll", check_element_position);
 
     check_element_position();
   }
+
+  window.addEventListener("scroll", check_appear);
+  check_appear();
 });
+
+function check_appear() {
+  const appear_elements = document.querySelectorAll(".appear");
+  const w_bottom = window.innerHeight + window.scrollY;
+  const w_top = scrollY;
+  appear_elements.forEach((element) => {
+    const pos = element.getBoundingClientRect();
+    if (pos.top < window.innerHeight - 75 && pos.bottom > 75) {
+      console.log(
+        element.className,
+        "pTOP: ",
+        pos.top,
+        " pBOT: ",
+        pos.bottom,
+        "\n",
+        "wTOP: ",
+        w_top,
+        " wBOT: ",
+        w_bottom
+      );
+      element.classList.add("appeared");
+    } else if (element.classList.contains("appeared")) {
+      element.classList.remove("appeared");
+    }
+  });
+}
 
 function check_element_position() {
   const window_height = window.innerHeight;
@@ -24,10 +53,6 @@ function check_element_position() {
   const target_position = window_height * 0.4;
 
   let hover_items = document.querySelectorAll(".hover");
-  document.querySelectorAll(".experience-list").forEach((list) => {
-    const list_items = [...list.querySelectorAll("li")];
-    hover_items = [...hover_items, ...list_items];
-  });
   hover_items.forEach((element) => {
     const element_pos = element.getBoundingClientRect();
 
