@@ -44,7 +44,7 @@ function scroll_appear() {
   const w_top = scrollY;
   appear_elements.forEach((element) => {
     const pos = element.getBoundingClientRect();
-    if (pos.top < window.innerHeight - 75 && pos.bottom > 75) {
+    if (pos.top < window.innerHeight - 50) {
       element.classList.add("appeared");
     } else if (element.classList.contains("appeared")) {
       element.classList.remove("appeared");
@@ -60,6 +60,9 @@ function scroll_focus() {
 
   let hover_items = document.querySelectorAll(".hover");
   hover_items.forEach((element) => {
+    element.addEventListener("click", () => {
+      element.classList.toggle("scroll-focus");
+    });
     const element_pos = element.getBoundingClientRect();
 
     if (element.classList.contains("phone-img")) {
@@ -73,8 +76,8 @@ function scroll_focus() {
       }
     } else {
       if (
-        element_pos.top <= target_position + 15 &&
-        element_pos.bottom >= target_position - 15
+        element_pos.top <= target_position + 20 &&
+        element_pos.bottom >= target_position - 20
       ) {
         element.classList.add("scroll-focus");
       } else {
@@ -89,9 +92,6 @@ function animate_phone_img() {
 
   text_header.style.filter = "blur(5px)";
   const phone_img = document.querySelector(".phone-img");
-  phone_img.addEventListener("click", () => {
-    phone_img.style.scale = 1.1;
-  });
 
   tl.add({
     targets: phone_img,
