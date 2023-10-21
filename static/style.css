@@ -226,6 +226,14 @@ section.black {
     transform: translate(-55%,-50%);
     scale: 1.05;
 }
+#me {
+    transition: all 0.5s;
+}
+#me.scroll-focus {
+    filter: blur(1px);
+    scale: 0.96;
+    transform: translateY(2%);
+}
 
 .header {
     margin-top: 30px;
@@ -354,7 +362,7 @@ section.black {
         display: block;
         position: absolute;
         max-height: 370px;
-        translate: -55%;
+        transform: translate(-55%,10%);
         left: -50%; 
         bottom: 0;
         transition: all 1s;

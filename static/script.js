@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const touch_bool = "ontouchstart" in window ? true : false;
+  let touch_bool = "ontouchstart" in window ? true : false;
   let phone_bool = window.innerWidth < 768 ? true : false;
 
   const experienceLists = document.querySelectorAll(".experience-list");
@@ -7,38 +7,44 @@ document.addEventListener("DOMContentLoaded", () => {
   animation_experience_lists(experienceLists);
 
   if (phone_bool) {
+    touch_bool = true;
     animate_phone_img();
   }
 
   if (touch_bool) {
-    window.addEventListener("scroll", check_element_position);
+    window.addEventListener("scroll", scroll_focus);
 
-    check_element_position();
+    scroll_focus();
   }
 
-  window.addEventListener("scroll", check_appear);
-  check_appear();
+  window.addEventListener("scroll", scroll_appear);
+  scroll_appear();
+
+  window.addEventListener("scroll", img_fade);
+  img_fade();
 });
 
-function check_appear() {
+function img_fade() {
+  const window_height = window.innerHeight;
+  const scroll_position = window.scrollY;
+
+  let image = document.getElementById("me");
+  const element_pos = image.getBoundingClientRect();
+
+  if (element_pos.top + 75 < 0) {
+    image.classList.add("scroll-focus");
+  } else {
+    image.classList.remove("scroll-focus");
+  }
+}
+
+function scroll_appear() {
   const appear_elements = document.querySelectorAll(".appear");
   const w_bottom = window.innerHeight + window.scrollY;
   const w_top = scrollY;
   appear_elements.forEach((element) => {
     const pos = element.getBoundingClientRect();
     if (pos.top < window.innerHeight - 75 && pos.bottom > 75) {
-      console.log(
-        element.className,
-        "pTOP: ",
-        pos.top,
-        " pBOT: ",
-        pos.bottom,
-        "\n",
-        "wTOP: ",
-        w_top,
-        " wBOT: ",
-        w_bottom
-      );
       element.classList.add("appeared");
     } else if (element.classList.contains("appeared")) {
       element.classList.remove("appeared");
@@ -46,7 +52,7 @@ function check_appear() {
   });
 }
 
-function check_element_position() {
+function scroll_focus() {
   const window_height = window.innerHeight;
   const scroll_position = window.scrollY;
 
@@ -83,6 +89,9 @@ function animate_phone_img() {
 
   text_header.style.filter = "blur(5px)";
   const phone_img = document.querySelector(".phone-img");
+  phone_img.addEventListener("click", () => {
+    phone_img.style.scale = 1.1;
+  });
 
   tl.add({
     targets: phone_img,
