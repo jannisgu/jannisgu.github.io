@@ -130,17 +130,18 @@ section.black {
 }
 .text-header {
     z-index: 1;
-    display: block;
+    display: flex;
+    flex-direction: column;
     max-width: 480px;
 }
 .text-header h1 {
     font-size: 2.65rem;
-    margin-bottom: 8px;
 }
 .text-header p {
     font-size: 1.3rem;
     font-weight: 300;
-    margin-bottom: 15px;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 .btn {
     border: none;
@@ -148,6 +149,7 @@ section.black {
     font-size: 1.2rem;
     font-weight: 600;
     background-color: white;
+    width: fit-content;
 }
 .btn.black {
     background-color: var(--main-black);
@@ -176,6 +178,13 @@ section.black {
     transition: all 0.3s ease;  
 }
 .btn.fill:hover::before {
+    top: 0;
+}
+.btn.fill.scroll-focus {
+    color: white;
+    transition: all 0.3s ease;  
+}
+.btn.fill.scroll-focus::before {
     top: 0;
 }
 .img-header {
@@ -281,6 +290,10 @@ section.black {
     background-color: var(--primary-color);
     transition: all 0.7s ease;
 }
+.experience-list ul li.scroll-focus {
+    background-color: var(--primary-color);
+    transition: all 0.7s ease;
+}
 .experience-list ul li span {
     max-width: 0px;
     width: 100%;
@@ -296,6 +309,13 @@ section.black {
     border-bottom-right-radius: 50%;
 }
 .experience-list ul li:hover span {
+    max-width: 50%;
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    transition-delay: 0.1s;
+    transition-duration: 0.8s;
+}
+.experience-list ul li.scroll-focus span {
     max-width: 50%;
     transition: 0.4s;
     -webkit-transition: 0.4s;
@@ -324,9 +344,19 @@ section.black {
         position: absolute;
         max-height: 370px;
         translate: -55%;
+        left: -50%; 
         bottom: 0;
-        left: -100%;
         transition: all 1s;
+    }
+    .phone-img.scroll-focus {
+        filter: blur(0px) !important;
+        scale: 1.1;
+    }
+    .text-header h1 {
+        max-width: 200px;
+    }
+    .text-header p {
+        font-size: 1.1rem;
     }
     .img-header {
         display: none;
