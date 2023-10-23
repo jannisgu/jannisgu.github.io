@@ -407,7 +407,7 @@ section.black {
 /* Limit the gap for very wide screens */
 @media screen and (min-width: 1200px) {
     .experience-list ul li {
-        width: 33%;
+        width: 33.33333%;
     }
     .left-side li, .right-side li {
     padding: 0 30px; /* Limit the gap for very wide screens */

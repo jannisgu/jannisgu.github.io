@@ -46,9 +46,7 @@ function scroll_appear() {
     const pos = element.getBoundingClientRect();
     if (pos.top < window.innerHeight - 50) {
       element.classList.add("appeared");
-    } else if (element.classList.contains("appeared")) {
-      element.classList.remove("appeared");
-    }
+    } 
   });
 }
 
