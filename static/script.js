@@ -23,6 +23,12 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("scroll", img_fade);
   img_fade();
 
+  const project_videos = document.querySelectorAll(".project .video")
+  project_videos.forEach((video) => {
+
+  })
+
+
   setupFooterLinksHover();
 });
 
