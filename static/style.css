@@ -128,6 +128,29 @@ section.black {
 .content.row {
     flex-direction: row;
 }
+.content .project{
+    background-color: white;
+    width: 100%;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding: 25px 40px;
+}
+.content .project .left {
+    display: flex;
+    flex-direction: column;
+}
+.content .project .left .frontend {
+    border: 1px solid black;
+    position: relative;
+}
+.content .project .left .backend {
+    
+}
+.content .project .left .hover-tech {
+    position: absolute;
+    display: none;
+}
 .text-header {
     z-index: 1;
     display: flex;
@@ -351,6 +374,20 @@ section.black {
     opacity: 1;
     translate: 0%;
     transition: all 1s;
+}
+
+footer {
+    height: 400px;
+    background-color: var(--primary-color);
+}
+footer .upper {
+    height: 200px;
+    width: 100%;
+}
+footer .lower {
+    height: 200px;
+    width: 100%;
+    background-color: black;
 }
 
 @media screen and (max-width: 768px) {
