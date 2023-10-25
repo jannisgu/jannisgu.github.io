@@ -22,7 +22,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener("scroll", img_fade);
   img_fade();
+
+  setupFooterLinksHover();
 });
+
+function setupFooterLinksHover() {
+  const footer_links = document.querySelectorAll(".socials a");
+  footer_links.forEach((link) => {
+    link.addEventListener("mouseover", () => {
+      const svg = link.querySelector("svg");
+      svg.style.fill = "#ffffff";
+    });
+    link.addEventListener("mouseout", () => {
+      const svg = link.querySelector("svg");
+      svg.style.fill = "#000000";
+    });
+  });
+}
 
 function img_fade() {
   const window_height = window.innerHeight;
@@ -46,7 +62,7 @@ function scroll_appear() {
     const pos = element.getBoundingClientRect();
     if (pos.top < window.innerHeight - 50) {
       element.classList.add("appeared");
-    } 
+    }
   });
 }
 

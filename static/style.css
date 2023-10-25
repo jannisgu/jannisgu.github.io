@@ -87,9 +87,11 @@ body {
     bottom: 0;
     top: 100%;
     background: rgb(101,101,101);
-    background: linear-gradient(181deg, rgba(101,101,101,0) 0%, rgba(255, 255, 255, 0.725) 100%);
+    background: linear-gradient(182deg, rgba(255, 255, 255, 0.059) 0%, rgba(255, 255, 255, 0.725) 100%);
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
     transition: all 0.5s ease;
     z-index: -1;
 }
@@ -377,17 +379,70 @@ section.black {
 }
 
 footer {
-    height: 400px;
+    max-height: 350px;
+    height: 350px;
     background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 footer .upper {
-    height: 200px;
+    height: 120px;
     width: 100%;
+    max-width: var(--max-width);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 50px;
+}
+
+footer .upper .jannisgu {
+    font-size: 1.25rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+footer .upper .jannisgu:hover {
+    scale: 1.02;
+    transform: translate(5%);
+    font-weight: 800;
+    transition: all 0.3s ease;
+}
+footer .upper .socials {
+    list-style: none;
+    display: flex;
+
+}
+footer .upper .socials li {
+    margin-inline: 10px;
+}
+footer .upper .socials li svg {
+    transition: all 0.3s ease;
 }
 footer .lower {
-    height: 200px;
+    height: 100%;
     width: 100%;
+    max-height: 250px;
     background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+footer .lower span {
+    font-size: 0.9rem;
+    color: rgb(182, 182, 182);
+    margin-bottom: 7px;
+}
+footer .lower .name {
+    margin-bottom: 20px;
+}
+footer .lower p {
+    font-size: 0.935rem;
+    line-height: 1.35rem;
+    color: rgb(219, 219, 219);
+    text-align: center;
 }
 
 @media screen and (max-width: 768px) {
