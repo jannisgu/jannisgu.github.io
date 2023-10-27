@@ -119,6 +119,21 @@ section.black {
     background-color: var(--main-black);
 }
 
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.flex.start {
+    align-items: flex-start;
+}
+.flex.row {
+    flex-direction: row;
+}
+.w100 {
+    width: 100%;
+}
 .content {
     display: flex;
     justify-content: center;
@@ -127,41 +142,61 @@ section.black {
     width: 100%;
     max-width: var(--max-width);
 }
+.content.full-width {
+     max-width: none;
+     width: 100% !important;
+}
 .content.row {
     flex-direction: row;
 }
 .content.black {
     background-color: var(--main-black);
-    border-radius: 10px;
-    padding: 25px;
 }
-.content .project{
+.content.white {
     background-color: white;
-    color: black;
-    width: 100%;
-    border-radius: 10px;
-    display: grid;
-    grid-template-columns: 50% 50%;
-    margin-bottom: 25px;
-    padding: 20px 5px;
 }
-
+.content.primary {
+    background-color: var(--primary-color);
+}
+.content .project {
+    background-color: var(--main-black);
+    color: white;
+    width: 100%;
+    max-width: var(--max-width);
+    margin-bottom: 25px;
+    padding: 20px 0px;
+}
+.project.white {
+    background-color: white;
+    color: var(--main-black);
+}
+.project.primary {
+    background-color: var(--primary-color);
+    color: var(--main-black);
+}
+.project>h2 {
+    margin-block: 30px;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    align-self: flex-start;
+}
+.project .inner {
+    display: grid;
+    grid-template-columns: 35% 65%;
+    width: 100%;
+    margin-bottom: 25px;
+}
 .content .project .left {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border-radius: 10px;
-    padding: 0px 20px;
+    width: 100%;
+    gap: 35px;
 }
-.project .left h2 {
-    margin-bottom: 15px;
-    font-size: 1.9rem;
-}
-.project .right {
-    padding: 15px 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.content .project .left h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
 }
 .project .left .key-points {
     display: flex;
@@ -174,10 +209,12 @@ section.black {
 }
 .project .left .key-points li {
     font-size: 1.2rem;
+    font-weight: 400;
 }
 .project .left .key-points li::before {
-    content: "\2714";
+    content: "\27A4";
     margin-right: 10px;
+    font-size: 1.3rem;
 }
 
 .content .project .front-backend {
@@ -187,8 +224,6 @@ section.black {
     grid-template-columns: 1fr 1fr;
     justify-items: center;
     align-items: center;
-    column-gap: 10px;
-    margin-top: 20px;
 }
 .content .project .front-backend>div {
     width: 100%;
@@ -196,41 +231,82 @@ section.black {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--main-black);
     color: white;
     font-size: 1.1rem;
     font-weight: 600;
     transition: all 0.3s ease;
     position: relative;
+    cursor: pointer;
+}
+.project.white .front-backend>div {
+    color: black;
+}
+.project.primary .front-backend>div {
+    color: black;
 }
 .content .project .front-backend>div.active {
     background-color: white;
     color: black;
+}
+.project.white .front-backend>div.active {
+    background-color: var(--main-black);
+    color: white;
 }
 .content .project .front-backend>div:hover {
     background-color: var(--primary-color);
     color: white;
     transition: all 0.3s ease;
 }
-.content .project .left .hover-tech {
-    column-span: 2;
+.content .project.primary .front-backend>div:hover {
+    background-color: rgba(255, 255, 255, 0.613);
+    color: var(--main-black);
+    transition: all 0.3s ease;
+}
+.content .project .front-backend>div.active:hover {
+    background-color: white;
+    color: var(--main-black);
+    transition: all 0.3s ease;
+}
+.content .project.white .front-backend>div.active:hover {
+    background-color: var(--main-black);
+    color: white;
+    transition: all 0.3s ease;
+}
+.content .project .hover-tech {
     width: 100%;
     display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: white;
 }
-.project .left .hover-tech ul {
-    display: flex;
-    flex-wrap: wrap;
+.content .project.white .hover-tech {
+    background-color: var(--main-black);
 }
-.project .left .hover-tech li {
+.project .hover-tech ul {
+    display: none;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.project .hover-tech ul.show {
+    display: flex;
+}
+.project .hover-tech li {
     width: 33.333%;
-    padding: 5px 0px;
+    padding: 15px 0px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+.project .right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding-left: 45px;
+}
 
-.project .left .hover-tech img {
+.project  .hover-tech img {
     height: 50px;
 }
 
@@ -246,7 +322,77 @@ section.black {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    filter: blur(2px);
+    opacity: 0.9;
+    border-radius: 10px;
+    transition: all 0.3s ease;
 }
+.video-wrapper video:hover {
+    scale: 1.01;
+    box-shadow: 15px 15px 100px rgba(255, 255, 255, 0.25);
+    transition: all 0.3s ease;
+}
+.video-wrapper .play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+.project .details {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.project .details button {
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 5px 15px;
+    background-color: transparent;
+    color: white;
+    border: 0px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+.project.primary .details button {
+    color: var(--main-black);
+}
+.project .details p {
+    line-height: 1.5rem;
+    font-style: italic;
+    padding: 0px 45px;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+    text-align: justify;
+} 
+.project .details p.show {
+    max-height: 1000px;
+    padding: 10px 45px;
+    transition: max-height 0.5s ease-in-out;
+}
+.project .details p a {
+    text-decoration: none;
+    color: white;
+}
+.project.primary .details p a {
+    color: black;
+}
+.project .details p a:hover {
+    text-decoration: underline;
+}
+
 .text-header {
     z-index: 1;
     display: flex;
@@ -552,7 +698,7 @@ footer .lower p {
 @media screen and (max-width: 768px) {
     .content {
         max-width: initial;
-        width: 90%;
+        width: 85%;
     }
     .phone-img {
         display: block;
@@ -585,6 +731,19 @@ footer .lower p {
     .left-side li, .right-side li {
       padding: 0 10px; /* Decrease the gap for small screens */
     }
+    .project .inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .project .right {
+        padding-top: 35px;
+        padding-inline: 20px;
+    }
+    .project {
+        max-width: 85% !important;
+    }
 }
   
 /* Larger screens */
@@ -597,6 +756,9 @@ footer .lower p {
     }
     .left-side li, .right-side li {
         padding: 0 20px; /* Increase the gap for larger screens */
+    }
+    .project {
+        width: 85% !important;
     }
 }
 

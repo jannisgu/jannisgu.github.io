@@ -23,14 +23,80 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("scroll", img_fade);
   img_fade();
 
-  const project_videos = document.querySelectorAll(".project .video")
-  project_videos.forEach((video) => {
-
-  })
-
+  setupProjects();
 
   setupFooterLinksHover();
 });
+
+function setupProjects() {
+  const projects = document.querySelectorAll(".project");
+  projects.forEach((project) => {
+    frontBackend(project);
+    moreDetails(project);
+    setupVideos(project);
+
+    function frontBackend(project) {
+      const frontendBtn = project.querySelector(".frontend");
+      const backendBtn = project.querySelector(".backend");
+      const frontendUl = project.querySelector(".frontend-ul");
+      const backendUl = project.querySelector(".backend-ul");
+
+      frontendBtn.addEventListener("click", () => {
+        if (
+          !frontendBtn.classList.contains("active") &&
+          backendBtn.classList.contains("active")
+        ) {
+          frontendBtn.classList.add("active");
+          backendBtn.classList.remove("active");
+          frontendUl.classList.add("show");
+          backendUl.classList.remove("show");
+        }
+      });
+      backendBtn.addEventListener("click", () => {
+        if (
+          !backendBtn.classList.contains("active") &&
+          frontendBtn.classList.contains("active")
+        ) {
+          backendBtn.classList.add("active");
+          frontendBtn.classList.remove("active");
+          backendUl.classList.add("show");
+          frontendUl.classList.remove("show");
+        }
+      });
+    }
+
+    function moreDetails(project) {
+      const btn = project.querySelector(".more-details-btn");
+      const details = project.querySelector(".details>p");
+      btn.addEventListener("click", () => {
+        details.classList.toggle("show");
+      });
+    }
+
+    function setupVideos(project) {
+      const video = project.querySelector("video");
+      const playBtn = project.querySelector(".play-btn");
+
+      playBtn.addEventListener("mouseover", () => {
+        video.style.boxShadow = "15px 15px 100px rgba(255, 255, 255, 0.3)"
+        video.style.scale = "1.01"
+      })
+      playBtn.addEventListener("mouseout", () => {
+        video.style.boxShadow = "15px 15px 100px rgba(255, 255, 255, 0)"
+        video.style.scale = "1"
+      })
+
+      playBtn.addEventListener("click", () => {
+        video.style.filter = "blur(0px)";
+        video.style.opacity = "1";
+        video.style.cursor = "pointer";
+        playBtn.style.display = "none";
+        video.controls = true;
+        video.play();
+      });
+    }
+  });
+}
 
 function setupFooterLinksHover() {
   const footer_links = document.querySelectorAll(".socials a");
