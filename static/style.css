@@ -430,6 +430,7 @@ section.black {
     transition: all 0.3s ease;
     color: var(--main-black);
     position: relative;
+    cursor: pointer;
 }
 .btn.fill::before {
     content: "";
@@ -438,6 +439,7 @@ section.black {
     left: 0;
     right: 0;
     top: 100%;
+    cursor: pointer;
     background: var(--main-black);
     transition: all 0.3s ease;
     z-index: -1;
