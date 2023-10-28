@@ -237,6 +237,8 @@ section.black {
     transition: all 0.3s ease;
     position: relative;
     cursor: pointer;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 .project.white .front-backend>div {
     color: black;
@@ -278,6 +280,8 @@ section.black {
     justify-content: center;
     align-items: center;
     background-color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 .content .project.white .hover-tech {
     background-color: var(--main-black);
@@ -340,7 +344,7 @@ section.black {
     background: rgba(0, 0, 0, 0.5);
     color: #fff;
     border: none;
-    padding: 10px 20px;
+    padding: 10px 15px;
     cursor: pointer;
     font-size: 16px;
     border-radius: 5px;
@@ -744,6 +748,9 @@ footer .lower p {
     .project {
         max-width: 85% !important;
     }
+    .video-wrapper .play-btn img {
+        height: 50px;
+    }
 }
   
 /* Larger screens */
@@ -760,6 +767,9 @@ footer .lower p {
     .project {
         width: 85% !important;
     }
+    .video-wrapper .play-btn img {
+        height: 70px;
+    }
 }
 
 /* Limit the gap for very wide screens */
@@ -769,5 +779,8 @@ footer .lower p {
     }
     .left-side li, .right-side li {
     padding: 0 30px; /* Limit the gap for very wide screens */
+    }
+    .video-wrapper .play-btn img {
+        height: 100px;
     }
 }
