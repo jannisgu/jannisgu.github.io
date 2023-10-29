@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   let touch_bool = "ontouchstart" in window ? true : false;
-  let phone_bool = window.innerWidth < 768 ? true : false;
+  let phone_bool = window.innerWidth <= 768 ? true : false;
 
   const experienceLists = document.querySelectorAll(".experience-list");
 
@@ -13,8 +13,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (touch_bool) {
     window.addEventListener("scroll", scroll_focus);
-
     scroll_focus();
+
+    const languages = document.querySelectorAll(".language-switch>div");
+    languages.forEach((language) => {
+      language.classList.add("touch");
+    });
   }
 
   window.addEventListener("scroll", scroll_appear);
@@ -41,6 +45,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   setupFooterLinksHover();
 });
+
+function closeMobileMenu() {
+  const navbarRight = document.querySelector(".navbar .right-side");
+  navbarRight.classList.toggle("mobile");
+  document.querySelector(".mobile-menu-btn").classList.toggle("change");
+}
+
+function handleMobileMenuClick(menuBtn) {
+  menuBtn.classList.toggle("change");
+  const navbarRight = document.querySelector(".navbar .right-side");
+  navbarRight.classList.toggle("mobile");
+}
 
 function setupProjects() {
   const projects = document.querySelectorAll(".project");
