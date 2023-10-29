@@ -65,11 +65,51 @@ body {
 }
 .navbar .left-side li {
     transition: all 0.1s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .navbar .left-side li:hover {
     scale: 1.06;
     transition: all 0.1s ease;
 }
+
+.language-switch {
+    padding: 5px 7px;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+.language-switch:hover {
+    transition: all 0.5s ease;
+}
+.language-switch>.active {
+    max-width: initial;
+    padding: 4px 5px;  
+}
+.language-switch>div {
+    max-width: 0;
+    overflow: hidden;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+
+}
+.language-switch:hover>div {
+    max-width: 50px;
+    padding: 4px 5px;  
+    transition: all 0.5s ease;
+    transition-delay: 0.2s;
+}
+.language-switch>div:hover {
+    scale: 1.1;
+    transition: all 0.3s ease;
+}
+
 
 .navbar .left-side li a:active,.navbar .right-side li a:active {
     color: inherit;
@@ -99,6 +139,7 @@ body {
     top: 0;
     transition: all 0.5s ease;
 }
+
 
 section {
     display: flex;

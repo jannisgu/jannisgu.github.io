@@ -25,6 +25,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   setupProjects();
 
+  const germanFlag = document.getElementById("de");
+  const englishFlag = document.getElementById("en");
+
+  germanFlag.addEventListener("click", () => {
+    let url = window.location.href;
+    let result = /^[^\/]*(\/\/)[^\/]*(\/)/.exec(url);
+    window.location.href = result[0] + "lang/de/index.html";
+  });
+  englishFlag.addEventListener("click", () => {
+    let url = window.location.href;
+    let result = /^[^\/]*(\/\/)[^\/]*(\/)/.exec(url);
+    window.location.href = result[0];
+  });
+
   setupFooterLinksHover();
 });
 
@@ -78,13 +92,13 @@ function setupProjects() {
       const playBtn = project.querySelector(".play-btn");
 
       playBtn.addEventListener("mouseover", () => {
-        video.style.boxShadow = "15px 15px 100px rgba(255, 255, 255, 0.3)"
-        video.style.scale = "1.01"
-      })
+        video.style.boxShadow = "15px 15px 100px rgba(255, 255, 255, 0.3)";
+        video.style.scale = "1.01";
+      });
       playBtn.addEventListener("mouseout", () => {
-        video.style.boxShadow = "15px 15px 100px rgba(255, 255, 255, 0)"
-        video.style.scale = "1"
-      })
+        video.style.boxShadow = "15px 15px 100px rgba(255, 255, 255, 0)";
+        video.style.scale = "1";
+      });
 
       playBtn.addEventListener("click", () => {
         video.style.filter = "blur(0px)";

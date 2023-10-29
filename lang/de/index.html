@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>jannisgu</title>
-    <link rel="stylesheet" href="static/style.css" />
-    <script src="static/script.js"></script>
-    <script src="lib/anime.min.js"></script>
+    <link rel="stylesheet" href="../../static/style.css" />
+    <script src="../../static/script.js"></script>
+    <script src="../../lib/anime.min.js"></script>
   </head>
   <body>
     <div class="navbar">
@@ -15,7 +15,31 @@
           <li><a href="/">JannisGu</a></li>
           <li>
             <div class="language-switch">
-              <div class="en active" id="en">
+              <div class="de active" id="de">
+                <picture>
+                  <source
+                    type="image/webp"
+                    srcset="
+                      https://flagcdn.com/h60/de.webp,
+                      https://flagcdn.com/h120/de.webp 2x
+                    "
+                  />
+                  <source
+                    type="image/png"
+                    srcset="
+                      https://flagcdn.com/h60/de.png,
+                      https://flagcdn.com/h120/de.png 2x
+                    "
+                  />
+                  <img
+                    src="https://flagcdn.com/h60/de.png"
+                    height="20"
+                    width="35"
+                    alt="Germany"
+                  />
+                </picture>
+              </div>
+              <div class="en" id="en">
                 <img
                   src="https://flagcdn.com/us.svg"
                   height="20"
@@ -23,68 +47,50 @@
                   alt="United States"
                 />
               </div>
-              <div class="de" id="de"><picture>
-                <source
-                  type="image/webp"
-                  srcset="
-                    https://flagcdn.com/h60/de.webp,
-                    https://flagcdn.com/h120/de.webp 2x
-                  "
-                />
-                <source
-                  type="image/png"
-                  srcset="
-                    https://flagcdn.com/h60/de.png,
-                    https://flagcdn.com/h120/de.png 2x
-                  "
-                />
-                <img
-                  src="https://flagcdn.com/h60/de.png"
-                  height="20"
-                  width="35"
-                  alt="Germany"
-                /> </picture
-              ></div>
             </div>
           </li>
         </ul>
         <ul class="right-side">
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Kenntnisse</a></li>
+          <li><a href="#projects">Projekte</a></li>
         </ul>
       </div>
     </div>
-    
+
     <section class="primary">
       <div class="content row appear">
         <div class="text-header">
-          <h1>Fullstack Developer & Web Enthusiast</h1>
+          <h1>Coding aus Leidenschaft</h1>
           <p>
-            I am Jannis Günther, a passionate coder dedicated to crafting
-            exceptional web experiences.
+            Ich bin Jannis Günther, ein leidenschaftlicher Full-Stack Entwickler
+            mit dem Ziel, beeindruckende Webanwendungen zu schaffen.
           </p>
           <button
             class="btn black fill hover"
             onclick="location.href = 'mailto:guenther.jannis@gmail.com';"
           >
-            Contact me
+            Kontakt
           </button>
         </div>
         <img
-          src="/static/img/profilbild.png"
+          src="../../static/img/profilbild.png"
           alt="Jannis Günther"
           class="phone-img hover"
         />
         <div class="img-header">
-          <img src="/static/img/profilbild.png" alt="Jannis Günther" id="me" />
+          <img
+            src="../../static/img/profilbild.png"
+            alt="Jannis Günther"
+            id="me"
+          />
         </div>
       </div>
     </section>
     <section class="black">
-      <h2 class="header appear" id="experience">Experience</h2>
+      <h2 class="header appear" id="experience">Kenntnisse</h2>
       <div class="content">
         <div class="experience-list appear">
-          <h3>Coding</h3>
+          <h3>Programmierung</h3>
           <ul>
             <li class="appear hover">
               <a
@@ -229,7 +235,7 @@ ExE Boss, CC BY 3.0 &lt;https://creativecommons.org/licenses/by/3.0&gt;, via Wik
               ><span style="margin-left: -20px">Flask</span>
             </li>
             <li class="appear hover">
-              <img src="static/img/Swift_logo_color.svg" alt="" /><span
+              <img src="../../static/img/Swift_logo_color.svg" alt="" /><span
                 >SWIFT</span
               >
             </li>
@@ -244,12 +250,14 @@ ExE Boss, CC BY 3.0 &lt;https://creativecommons.org/licenses/by/3.0&gt;, via Wik
               ><span style="margin-left: -20px">Git</span>
             </li>
             <li class="appear hover">
-              <img src="static/img/github-mark.svg" alt="" /><span>GitHub</span>
+              <img src="../../static/img/github-mark.svg" alt="" /><span
+                >GitHub</span
+              >
             </li>
           </ul>
         </div>
         <div class="experience-list appear">
-          <h3>Languages</h3>
+          <h3>Sprachen</h3>
           <ul>
             <li class="appear hover">
               <picture>
@@ -296,7 +304,7 @@ ExE Boss, CC BY 3.0 &lt;https://creativecommons.org/licenses/by/3.0&gt;, via Wik
           </ul>
         </div>
         <div class="experience-list appear">
-          <h3>Other</h3>
+          <h3>Weitere</h3>
           <ul>
             <li class="appear hover">
               <a
@@ -339,18 +347,18 @@ ExE Boss, CC BY 3.0 &lt;https://creativecommons.org/licenses/by/3.0&gt;, via Wik
       </div>
     </section>
     <section class="primary">
-      <div class="header black appear" id="projects">Projects</div>
+      <div class="header black appear" id="projects">Projekte</div>
       <div class="content black full-width">
         <div class="project flex">
-          <h2 class="appear">Automated Stock Calculator</h2>
+          <h2 class="appear">Automatisierte Aktien-Berechnung</h2>
           <div class="inner">
             <div class="left">
               <div>
-                <h3 class="appear">Keypoints:</h3>
+                <h3 class="appear">Überblick:</h3>
                 <ul class="key-points">
-                  <li class="appear">Fullstack Application</li>
-                  <li class="appear">Webscraping</li>
-                  <li class="appear">User Authentication</li>
+                  <li class="appear">Fullstack Anwendung</li>
+                  <li class="appear">Web Scraping</li>
+                  <li class="appear">Benutzerauthentifizierung</li>
                 </ul>
               </div>
               <div>
@@ -431,14 +439,14 @@ ExE Boss, CC BY 3.0 &lt;https://creativecommons.org/licenses/by/3.0&gt;, via Wik
                   preload="metadata"
                 >
                   <source
-                    src="./static/vids/stock_calculator_video.mov"
+                    src="../../static/vids/stock_calculator_video.mov"
                     type="video/mp4"
                   />
-                  Your browser does not support the video tag.
+                  Ihr Browser unterstützt das Video Element (HTML) nicht.
                 </video>
                 <button class="play-btn">
                   <img
-                    src="/static/img/play_white.png"
+                    src="../../static/img/play_white.png"
                     alt=""
                     title="https://icons8.com/icon/9978/spielen icon byhttps://icons8.com Icons8"
                   />
@@ -447,35 +455,38 @@ ExE Boss, CC BY 3.0 &lt;https://creativecommons.org/licenses/by/3.0&gt;, via Wik
             </div>
           </div>
           <div class="details appear">
-            <button class="more-details-btn">More Details</button>
+            <button class="more-details-btn">Mehr Details</button>
             <p>
-              This is a personal project which I started with the intention of
-              comparing stocks efficiently and based on an algorithm. The
-              calculation is based on the
-              <a href="https://www.investopedia.com/terms/d/dcf.asp"
-                >discounted cashflow method</a
-              >. The application covers user authentication and allows users to
-              evaluate a given stock within a few seconds automatically based on
-              the financial data that can be found on
-              <a href="https://finance.yahoo.com/">Yahoo Finance</a>. The
-              application also provides an adaptable comparison of all
-              calculated stocks as well as an evaluation page which is used to
-              determine whether or not the calculations are effective or not.
+              Der Aktien Berechner ist ein persönliches Projekt, mit dem ich
+              anfing, um die Aktienbewertung zu automatisieren. Die Berechnung
+              beruht auf der
+              <span style="font-weight: 600">Discounted Cashflow</span> Methode,
+              die finanzielle Fundamentaldaten von Unternehmen nutzt, um einen
+              "fairen" Aktienwert zu berechnen. Der Nutzer der Anwendung kann
+              einen Aktienkürzel (bspw. AAPL für Apple) eingeben, woraufhin die
+              nötigen Daten bezogen werden, die Berechnung durchgeführt wird und
+              die Ergebnisse anschließend graphisch ansprechend dargestellt
+              werden. Die Daten werden in einer relationalen Datenbank für jeden
+              Nutzer gespeichert und die Anwendung erlaubt darüber hinaus noch
+              den Vergleich der berechneten Aktien in einem bestimmten Sektor
+              oder einer bestimmten Größe.<br />
+              Im Frontend habe ich mit HTML5, CSS und JavaScript gearbeitet und
+              das Backend läuft über Python und Flask.
             </p>
           </div>
         </div>
       </div>
       <div class="content primary full-width">
         <div class="project flex primary">
-          <h2 class="appear">Housekeeping Book</h2>
+          <h2 class="appear">Haushaltsbuch</h2>
           <div class="inner">
             <div class="left">
               <div>
-                <h3 class="appear">Keypoints:</h3>
+                <h3 class="appear">Übersicht:</h3>
                 <ul class="key-points">
-                  <li class="appear">Fullstack Application</li>
-                  <li class="appear">Database Integration</li>
-                  <li class="appear">User Authentication</li>
+                  <li class="appear">Full-Stack Anwendung</li>
+                  <li class="appear">Datenbankintegration</li>
+                  <li class="appear">Benutzerauthentifizierung</li>
                 </ul>
               </div>
               <div>
@@ -566,14 +577,14 @@ ExE Boss, CC BY 3.0 &lt;https://creativecommons.org/licenses/by/3.0&gt;, via Wik
                   preload="metadata"
                 >
                   <source
-                    src="./static/vids/ledger_video.mov"
+                    src="../../static/vids/ledger_video.mov"
                     type="video/mp4"
                   />
-                  Your browser does not support the video tag.
+                  Ihr Browser unterstützt das Video Element (HTML) nicht.
                 </video>
                 <button class="play-btn">
                   <img
-                    src="/static/img/play_white.png"
+                    src="../../static/img/play_white.png"
                     alt=""
                     title="https://icons8.com/icon/9978/spielen icon byhttps://icons8.com Icons8"
                   />
@@ -582,17 +593,20 @@ ExE Boss, CC BY 3.0 &lt;https://creativecommons.org/licenses/by/3.0&gt;, via Wik
             </div>
           </div>
           <div class="details appear">
-            <button class="more-details-btn">More Details</button>
+            <button class="more-details-btn">Mehr Details</button>
             <p>
-              This is another personal project which I started with the
-              intention of creating a householding book application with the
-              featues I wanted and improving at coding at the same time. The
-              application provides user authentication and allows users to
-              monitor their income and expenses. It allows to create personal
-              categories which provides the user with the ability to
-              differentiate as much or as little as wanted. I coded the frontend
-              of this application entirely with ReactJS and used ExpressJS for
-              the backend while I also used mySQL for database management.
+              Das Haushaltsbuch ist ein privates Projekt, was ich in erster
+              Linie anfing, um meine Programmierkenntnisse weiter zu verbessern
+              und weitere Erfahrungen zu sammeln. <br />Die Webanwendung erlaubt
+              den Nutzer, Einträge zu Einnahmen und Ausgaben mit Datum, Betrag,
+              Kategorie und einer Info. Die Kategorien sowie die Infos sind frei
+              wählbar und erlauben eine hohe Individualisierung, da die
+              Differenziertheit der Übersichten auf diesen Kategorien und Infos
+              beruhen. Weiterhin ermöglicht die Webanwendung die
+              Benutzerauthentifizierung und speichert die Einträge in
+              Zusammenhang mit dem Nutzer-Account.<br />
+              Das Frontend wurde mit ReactJs entwickelt und das Backend mit
+              Node.js, Express.js und einer MySQL Datenbank.
             </p>
           </div>
         </div>
@@ -664,7 +678,7 @@ ExE Boss, CC BY 3.0 &lt;https://creativecommons.org/licenses/by/3.0&gt;, via Wik
         </ul>
       </div>
       <div class="lower">
-        <span>website coded by:</span>
+        <span>Website programmiert von:</span>
         <div class="name">Jannis Günther</div>
       </div>
     </footer>
