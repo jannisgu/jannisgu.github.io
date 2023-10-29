@@ -448,7 +448,7 @@ section.black {
     overflow: hidden;
     max-height: 0;
     transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
-    text-align: justify;
+    text-align: center;
 } 
 .project .details p.show {
     max-height: 1000px;
@@ -819,6 +819,9 @@ footer .lower p {
     .project {
         max-width: 85% !important;
     }
+    .project h2 {
+        font-size: 2.2rem;
+    }
     .video-wrapper .play-btn img {
         height: 50px;
     }
@@ -849,6 +852,9 @@ footer .lower p {
     }
     .navbar .mobile-menu-btn {
         display: inline;
+    }
+    .experience-list h3 {
+        letter-spacing: 1px;
     }
 
 }
