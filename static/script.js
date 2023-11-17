@@ -95,11 +95,32 @@ function setupProjects() {
       });
     }
 
+    let cancelTypewriter = false;
+
+    function typewriter(text, i, element) {
+      if (i < text.length && !cancelTypewriter) {
+        element.textContent += text.charAt(i);
+        i++;
+        setTimeout(function () {
+          typewriter(text, i, element);
+        }, 50);
+      }
+    }
+
     function moreDetails(project) {
       const btn = project.querySelector(".more-details-btn");
-      const details = project.querySelector(".details>p");
+      const p = project.querySelector(".details>p");
+      const content = project.querySelector(".details>span").textContent;
       btn.addEventListener("click", () => {
-        details.classList.toggle("show");
+        if (p.classList.contains("show")) {
+          p.classList.remove("show");
+          cancelTypewriter = true;
+        } else {
+          p.textContent = "";
+          p.classList.add("show");
+          cancelTypewriter = false;
+          typewriter(content, 0, p);
+        }
       });
     }
 
