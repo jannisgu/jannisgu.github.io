@@ -443,7 +443,7 @@ section.black {
 }
 .project .details p {
     line-height: 1.5rem;
-    font-style: italic;
+    font-family: 'Special Elite', sans-serif;
     padding: 0px 45px;
     overflow: hidden;
     max-height: 0;
