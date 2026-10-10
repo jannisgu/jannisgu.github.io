@@ -1,11 +1,10 @@
 :root {
   color-scheme: light;
-  --ink: #173b4a;
-  --muted: #4b6770;
+  --ink: #142f40;
+  --muted: #526a74;
   --line: #dbe5e7;
-  --sky: #78c1d3;
   --sky-pale: #e8f3f6;
-  --sun: #f2c65d;
+  --paper: #fbfcfa;
   --page-width: 960px;
   --gutter: 48px;
 }
@@ -21,7 +20,7 @@ html {
 body {
   margin: 0;
   color: var(--ink);
-  background: #fcfdfc;
+  background: var(--paper);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 16px;
   line-height: 1.7;
@@ -110,6 +109,7 @@ h1 {
   font-weight: 550;
   letter-spacing: -.055em;
   line-height: 1.08;
+  color: var(--ink);
 }
 
 .lead {
@@ -137,18 +137,20 @@ h1 {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  overflow: hidden;
+  overflow: visible;
 }
 
-.sun {
+.tide-mark {
   position: absolute;
-  bottom: 8%;
-  left: 9%;
-  width: 76%;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: var(--sun);
-  opacity: .94;
+  z-index: 0;
+  right: -12%;
+  bottom: 0;
+  width: min(520px, 50vw);
+  height: min(350px, 82%);
+  max-width: none;
+  object-fit: contain;
+  object-position: right bottom;
+  pointer-events: none;
 }
 
 .portrait {
@@ -245,11 +247,14 @@ footer {
     margin-inline: auto;
   }
 
-  .sun {
+  .tide-mark {
+    right: auto;
     bottom: 0;
     left: 50%;
-    width: min(270px, 72vw);
+    width: min(580px, 100vw);
+    height: 100%;
     transform: translateX(-50%);
+    object-position: center bottom;
   }
 
   .portrait {
